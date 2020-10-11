@@ -43,6 +43,9 @@ class LinkedList:
             yield current_node
             current_node = current_node.next_node
 
+    def __eq__(self, other):
+        return list(map(lambda node: node.value, self)) == other
+
     def insert_into(self, position, value):
         """
         Insert a node into the exactly position in the linked list
@@ -72,9 +75,36 @@ class LinkedList:
 
         raise Exception("There's no such position in the list")
 
+    def remove_from(self, position: int):
+        """
+        Remove node from given position
+        :param position: the position of the node to be removed
+        """
+        if self.head is None:
+            raise Exception('The list is empty')
+
+        previous_node = None
+
+        for node_position, node in enumerate(self):
+            if node_position == position:
+                if previous_node is None:
+                    self.head = self.head.next_node
+
+                else:
+                    previous_node.next_node = node.next_node
+
+                return
+
+            previous_node = node
+
+        raise Exception("There's no such position in the list")
+
+    def get_as_array(self):
+        return
+
 
 if __name__ == '__main__':
-    linked_list = LinkedList([1,2,4,5,6])
+    linked_list = LinkedList([1, 2, 4, 5, 6])
 
     linked_list.insert_into(position=2, value=3)
     print(linked_list)
