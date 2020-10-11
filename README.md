@@ -16,3 +16,6 @@ Here you will find the main resources used in my adventures learning(or at least
 - [Why My Computer Wants to Forget](https://www.youtube.com/watch?v=0A1e8eceIsY)
 - [Dynamic Memory Allocation](https://www.youtube.com/watch?v=9uhSYDY4sxA)
 - [Overview of Arrays and Memory](https://www.youtube.com/watch?v=pmN9ExDf3yQ)
+
+### Python related stuff
+- [Linked List](https://realpython.com/linked-lists-python/)
