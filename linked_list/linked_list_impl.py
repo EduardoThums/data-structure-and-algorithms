@@ -98,15 +98,3 @@ class LinkedList:
             previous_node = node
 
         raise Exception("There's no such position in the list")
-
-    def get_as_array(self):
-        return
-
-
-if __name__ == '__main__':
-    linked_list = LinkedList([1, 2, 4, 5, 6])
-
-    linked_list.insert_into(position=2, value=3)
-    print(linked_list)
-
-    linked_list.insert_into(position=5, value=3)
