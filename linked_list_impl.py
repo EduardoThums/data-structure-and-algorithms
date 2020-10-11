@@ -43,18 +43,40 @@ class LinkedList:
             yield current_node
             current_node = current_node.next_node
 
-    def _insert_into(self, position, value):
+    def insert_into(self, position, value):
         """
         Insert a node into the exactly position in the linked list
         :param position: the position where the node will be inserted
         :param value: the value of the node
         """
+        if self.head is None:
+            raise Exception('The list is empty')
+
+        previous_node = None
+        current_position = 0
+
+        for node in self:
+            if current_position != position:
+                previous_node = node
+                current_position += 1
+                continue
+
+            new_node = Node(value, node.next_node)
+
+            if current_position == 0:
+                self.head = new_node
+            else:
+                previous_node.next_node = new_node
+
+            return
+
+        raise Exception("There's no such position in the list")
 
 
 if __name__ == '__main__':
     linked_list = LinkedList([1,2,4,5,6])
 
+    linked_list.insert_into(position=2, value=3)
     print(linked_list)
 
-    for node in linked_list:
-        print(node)
+    linked_list.insert_into(position=5, value=3)
