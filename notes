@@ -1,0 +1,32 @@
+[Data Structures]
+- Abstract data type(adt): defines operations but not their implementation
+    - logical view
+    - operations
+    - cost of operations
+    - implementation
+
+
+[Linked List]
+- The data is stored into nodes, each node have a value and a next field, the next field is a pointer to the next node
+in the list.
+- By convention the first node of the list is called "head", and the last is called "tail"
+
+class Node:
+    def __init__(self, value, next):
+        self.value = value
+        self.next = next
+
+
+[Arrays and Memory]
+When incrementing arrays size, under the hood another array is created with almost the double
+size and the old one is deleted, allocating the new array in the memory.
+
+1 integer = 4 bytes
+
+
+[Big O Notation and Time Complexity]
+Time complexity: how the runtime increases as the length increases too.
+By convention BigO notation is used without any coefficient, for example, O(2n^2) is equal to O(n^2)
+O(1) - constant time
+O(n) - linear time
+O(n2) - quadratic time
