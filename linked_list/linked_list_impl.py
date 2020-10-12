@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 
 class Node:
@@ -98,3 +98,34 @@ class LinkedList:
             previous_node = node
 
         raise Exception("There's no such position in the list")
+
+    def reverse_itself_iteratively(self):
+        """
+        Reverse the linked list using iterative move
+        """
+        previous_node = None
+        current_node = self.head
+
+        while current_node is not None:
+            future_current_node = current_node.next_node
+
+            current_node.next_node = previous_node
+            previous_node = current_node
+
+            current_node = future_current_node
+
+        self.head = previous_node
+
+    def reverse_itself_recursively(self, head: Node) -> Optional[Node]:
+        """
+        Reverse the linked list using recursive mode
+        """
+        if head is None or head.next_node is None:
+            return head
+
+        new_head = self.reverse_itself_recursively(head.next_node)
+
+        head.next_node.next_node = head
+        head.next_node = None
+
+        return new_head
