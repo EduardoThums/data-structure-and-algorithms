@@ -17,12 +17,20 @@ class Node:
         self.next = next
 
 
-[Arrays and Memory]
-When incrementing arrays size, under the hood another array is created with almost the double
-size and the old one is deleted, allocating the new array in the memory.
+[Memory]
+Basically memory is a one byte array, where each byte represents one position in the array and the value stored into it
+is the value of some variable. For example 1 integer uses 4 bytes of memory in the array, where 1 char uses 1 byte in the array.
 
-1 integer = 4 bytes
+How arrays works in memory?
+Array in memory is a prefixed set of sequential values, so if a array uses 16 bytes in memory it can't go higher(uses more memory)
+than what's is already using, whats happen under the hood is that the array is deleted and another array in the memory is created
+with more space.
 
+[Pointers]
+They are just variables that hold memory addresses, they are specified by the time of the value stored in x memory address:
+
+int x = 5; # The variable "x" is stored in the  memory address 169
+int *px = &x; # The variable "px" holds the memory address of "x", which is 169
 
 [Big O Notation and Time Complexity]
 Time complexity: how the runtime increases as the length increases too.
