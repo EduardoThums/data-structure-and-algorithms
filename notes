@@ -27,10 +27,21 @@ than what's is already using, whats happen under the hood is that the array is d
 with more space.
 
 [Pointers]
-They are just variables that hold memory addresses, they are specified by the time of the value stored in x memory address:
+- They are just variables that hold memory addresses.
+- The operator "*" is a deference operator, which means that he can access/manipulate the value in some memory address.
 
-int x = 5; # The variable "x" is stored in the  memory address 169
-int *px = &x; # The variable "px" holds the memory address of "x", which is 169
+1) Create pointer variable
+int *px 
+
+2) Access memory address of variable
+&x
+
+3) Assign memory address to pointer
+px = &x
+
+4) Access value of memory address in pointer
+*px
+
 
 [Big O Notation and Time Complexity]
 Time complexity: how the runtime increases as the length increases too.
